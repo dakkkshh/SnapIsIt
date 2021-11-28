@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React, {useState, useEffect} from 'react';
+import Lottie from 'react-lottie';
+// import Preloader from './components/preloader';
 function App() {
+  const [loading, setLoading] = useState(false);
+  useEffect (() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        loading?
+        // <Preloader />
+        <Lottie
+
+          options={{
+            loop: true,
+            autoplay: true,
+            animationData: require('../src/components/lottie/preloader.json')
+          }}
+          height={400}
+          width={400}
+        />
+        :<h1>Hello!</h1>
+      }
     </div>
   );
 }
