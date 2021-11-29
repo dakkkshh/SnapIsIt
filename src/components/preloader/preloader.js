@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import './preloader.css';
 import Lottie from 'react-lottie';
 
 function Preloader(){
@@ -7,6 +8,8 @@ function Preloader(){
         setLoading(true);
         setTimeout(() => {
         setLoading(false);
+        let preloader = document.getElementsByClassName('preloader');
+        preloader[0].style.display = 'none';
         }, 5000);
     }, []);
     return (
@@ -14,10 +17,10 @@ function Preloader(){
         {loading && (
             <Lottie
             options={{
-                animationData: require('../components/lottie/preloader.json'),
+                animationData: require('../lottie/preloader.json'),
             }}
-            height={400}
-            width={400}
+            height={300}
+            width={300}
             />
         )}
         </div>
