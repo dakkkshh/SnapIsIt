@@ -8,14 +8,13 @@ function Preloader(){
         setLoading(true);
         setTimeout(() => {
         setLoading(false);
-        let preloader = document.getElementsByClassName('preloader');
-        preloader[0].style.display = 'none';
         }, 5000);
     }, []);
     return (
         <div className="preloader">
         {loading && (
             <Lottie
+            isClickToPauseDisabled={true}
             options={{
                 animationData: require('../lottie/preloader.json'),
             }}

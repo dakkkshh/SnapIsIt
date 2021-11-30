@@ -4,12 +4,15 @@ import './login.css';
 const Login = () => {
     return (
         <div className="login">
+            <div className="login-container">
             <h1>Login</h1>
-            <input type="text" placeholder="Enter Your E-mail"></input>
+            <p>Welcome Back!&#9889;</p>
+            <input type="text" id="emailText" placeholder="Enter Your E-mail"></input>
             <input type="password" placeholder="Enter Your Password"></input>
-            <div className="button">Login</div>            
+            <div className="login-button">Login</div>            
             <div>or</div>
-            <div className="button">Signup</div>
+            <div className="signup-button">Signup</div>
+            </div>
         </div>
     );
 };

@@ -1,17 +1,20 @@
 import './App.css';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Preloader from './components/preloader/preloader';
-import Signup from './components/signup/signup';
-// import Login from './components/login/login';
-function App() {
+import Login from './components/login/login';
 
+function App() {
+  const [loading, setLoading] = useState(false);
+    useEffect (() => {
+        setLoading(true);
+        setTimeout(() => {
+        setLoading(false);
+        }, 5000);
+    }, []);
   return (
     <div className="App">
-      {
-        <><Preloader />
-        <Signup />
-        {/* <Login /> */}
-        </>
+      { 
+        loading ? <Preloader /> : <Login />
       }
     </div>
   );
