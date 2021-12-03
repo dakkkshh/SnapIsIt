@@ -126,7 +126,7 @@
 @media screen and (min-width: 600px) and (max-width: 1100px) {
     .signup > .signup-container {
         width: 90%;
-        height: 80%;
+        height: 95%;
         border-radius: 25px;
     }
     .signup-container > h1{
