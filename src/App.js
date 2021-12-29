@@ -1,7 +1,9 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import Preloader from './components/preloader/preloader';
-import Login from './components/login/login';
+// import Login from './components/login/login';
+import Signup from './components/signup/signup';
+import StudyRoomDesk from './components/desk/studyRoomDesk';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -14,7 +16,7 @@ function App() {
   return (
     <div className="App">
       { 
-        loading ? <Preloader /> : <Login />
+        loading ? <Preloader /> : <Signup />
       }
     </div>
   );

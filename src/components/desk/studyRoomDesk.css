@@ -1,0 +1,59 @@
+.desk-top{
+    width: 200px;
+    height: 100px;
+    background-color: #fff;
+    position: relative;
+    display: grid;
+    border: 2px solid #B891FF;
+    border-radius: 8px;
+    margin: 1%;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+}
+.desk-top .desk-top-top{
+    grid-row: 1/3;
+    grid-column: 1/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    margin: 15% 40%;
+    background-color: #5138ED;
+    border-radius: 50%;
+}
+.desk-top .desk-top-top #deskName{
+    color: white;
+}
+#deskPart1{
+    grid-row-start:1 ;
+    grid-row-end:2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    border-radius: 6px 0px 0px 0px;
+}
+#deskPart2{
+    grid-row-start:1 ;
+    grid-row-end:2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border-radius: 0px 6px 0px 0px;
+}
+#deskPart3{
+    grid-row-start:2 ;
+    grid-row-end:3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    border-radius: 0px 0px 0px 6px;
+}
+#deskPart4{
+    grid-row-start:2 ;
+    grid-row-end:3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border-radius: 0px 0px 6px 0px;
+}
+.deskPartName{
+    text-align: center;
+    vertical-align: baseline;
+    font-size: medium;
+}
