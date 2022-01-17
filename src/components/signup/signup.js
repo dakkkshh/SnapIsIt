@@ -1,8 +1,10 @@
 import React,{useState} from "react";
 import axios from 'axios';
 import './signup.css';
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+    const navigate = useNavigate();
     const [user, setUser] = useState({
         name: '',
         email: '',
@@ -16,7 +18,7 @@ const Signup = () => {
             [name]: value
         })
     }
-    const SingupUser = ()=>{
+    const SignupUser = ()=>{
         const {name,email,password,rePassword} = user
         if(password !== rePassword){
             alert('Password Missmatch')   
@@ -25,15 +27,20 @@ const Signup = () => {
         }else if(email.substring(email.length-4) !== '.com'){
             alert('Enter correct email!')
         }else {
-            // alert('Successfully Signed Up!')
             axios.post('http://localhost:9002/signup', {
                 name,
                 email,
                 password
             }).then(res => {
+                alert(res.data)
                 console.log(res)
+            }).catch(err => {
+                alert('Error Encounterd!')
             })
         }
+    }
+    const Login = ()=>{
+        navigate('/SnapIsIt/login')
     }
     return (
         <div className="signup">
@@ -44,9 +51,9 @@ const Signup = () => {
             <input type="email" name = "email" value = {user.email} placeholder="Enter Your E-mail" onChange={handleChange}></input>
             <input type="password" name = "password" value = {user.password} placeholder="Enter Your Password" onChange={handleChange}></input>
             <input type="password" name = "rePassword" value = {user.rePassword} placeholder="Re-Enter Your Password" onChange={handleChange}></input>
-            <div className="signup-button" onClick ={SingupUser}>Signup</div>            
+            <div className="signup-button" onClick ={SignupUser}>Signup</div>            
             <div>or</div>
-            <div className="login-button">Login</div>
+            <div className="login-button" onClick={Login}>Login</div>
             </div>
         </div>
     );
